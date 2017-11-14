@@ -26,6 +26,7 @@
  * @property string $country
  * @property string $vat
  * @property string $language_id
+ * @property string $timezone
  * @property integer $validation_kind
  * @property string $validation_code
  * @property Doctrine_Collection $Groups
@@ -69,6 +70,7 @@
  * @method string                getCountry()               Returns the current record's "country" value
  * @method string                getVat()                   Returns the current record's "vat" value
  * @method string                getLanguageId()            Returns the current record's "language_id" value
+ * @method string                getTimezone()              Returns the current record's "timezone" value
  * @method integer               getValidationKind()        Returns the current record's "validation_kind" value
  * @method string                getValidationCode()        Returns the current record's "validation_code" value
  * @method Doctrine_Collection   getGroups()                Returns the current record's "Groups" collection
@@ -111,6 +113,7 @@
  * @method sfGuardUser           setCountry()               Sets the current record's "country" value
  * @method sfGuardUser           setVat()                   Sets the current record's "vat" value
  * @method sfGuardUser           setLanguageId()            Sets the current record's "language_id" value
+ * @method sfGuardUser           setTimezone()              Sets the current record's "timezone" value
  * @method sfGuardUser           setValidationKind()        Sets the current record's "validation_kind" value
  * @method sfGuardUser           setValidationCode()        Sets the current record's "validation_code" value
  * @method sfGuardUser           setGroups()                Sets the current record's "Groups" collection
@@ -234,6 +237,11 @@ abstract class BasesfGuardUser extends myDoctrineRecord
              'type' => 'string',
              'notnull' => false,
              'length' => 5,
+             ));
+        $this->hasColumn('timezone', 'string', 30, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 30,
              ));
         $this->hasColumn('validation_kind', 'integer', 1, array(
              'type' => 'integer',

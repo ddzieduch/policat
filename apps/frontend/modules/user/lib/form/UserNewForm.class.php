@@ -18,16 +18,19 @@ class UserNewForm extends BasesfGuardUserAdminForm {
 
     $this->setWidget('country', new sfWidgetFormI18nChoiceCountry);
     $this->setValidator('country', new sfValidatorI18nChoiceCountry);
+    
+    $this->setWidget('timezone', new sfWidgetFormI18nChoiceTimezone);
+    $this->setValidator('timezone', new sfValidatorI18nChoiceTimezone);
 
     $this->setValidator('email_address', new ValidatorEmail(array('max_length' => 80)));
 
     foreach (array('email_address', 'first_name', 'last_name', 'organisation', 'website', 'street',
-      'post_code', 'city', 'country', 'mobile', 'phone', 'language_id') as $field)
+      'post_code', 'city', 'country', 'mobile', 'phone', 'language_id', 'timezone') as $field)
       $this->getValidator($field)->setOption('required', true);
 
     $this->useFields(array(
         'email_address', 'first_name', 'last_name', 'organisation', 'website', 'street',
-        'post_code', 'city', 'country', 'mobile', 'phone', 'language_id', 'groups_list', 'vat'
+        'post_code', 'city', 'country', 'mobile', 'phone', 'language_id', 'timezone', 'groups_list', 'vat'
       ), true);
     
     $this->getWidget('groups_list')->setOption('expanded', true);

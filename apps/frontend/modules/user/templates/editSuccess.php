@@ -13,7 +13,7 @@
           <?php
           echo $form->renderRows('email_address');
           if (!$is_new) echo $form->renderRows('password', 'password_again');
-          echo $form->renderRows('first_name', 'last_name', 'phone', 'language_id') ?>
+          echo $form->renderRows('first_name', 'last_name', 'phone', 'language_id', 'timezone') ?>
           <?php if ($is_new): ?>
           <p>An E-mail will be sent to the user to activate and set the password.</p>
           <?php endif ?>

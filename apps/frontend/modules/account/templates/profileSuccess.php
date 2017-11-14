@@ -10,7 +10,7 @@
         <div class="row">
             <div class="span6">
                 <?php echo $form->renderHiddenFields() ?>
-                <?php echo $form->renderRows('email_address', 'password', 'password_again', 'first_name', 'last_name', 'phone', 'mobile', 'language_id') ?>
+                <?php echo $form->renderRows('email_address', 'password', 'password_again', 'first_name', 'last_name', 'phone', 'mobile', 'language_id', 'timezone') ?>
             </div>
             <div class="span6">
                 <?php echo $form->renderRows('organisation', 'vat', 'website', 'street', 'post_code', 'city', 'country') ?>

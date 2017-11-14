@@ -66,6 +66,7 @@ sfGuardUser:
     country:          { type: string(2) }
     vat:              { type: string(40) }
     language_id:      { type: string(5), notnull: false, default: null }
+    timezone:         { type: string(30), notnull: false, default: null }
     validation_kind: { type: integer(1), notnull: true, default: 0 }
     validation_code: { type: string(20) }
   relations:
